@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var num1="";
+        var num2="";
+        var op="";
+        var result=0;
+        var temp;
+        function input_user(idd){
+
+            temp=document.getElementById(idd).value;
+            //alert(temp);
+            if(temp!='+' && temp!='-' && temp!='*' && temp!='/' && op=="" && temp!='='){
+            num1=num1+temp;
+        }
+            else if(op!="" && temp!='='){
+                num2=num2+temp;
+            }
+            else if(temp=='='){
+                //alert("hello u getting output");
+                //alert(num1+" and "+num2);
+                calculate();}
+                
+            else{
+                
+                op=temp;}
+
+        }
+        function calculate(){
+            if(op=='+')
+            {
+                result=eval(num1)+eval(num2);
+                
+            }
+            else if(op=='-'){
+                result=eval(num1)-eval(num2);
+
+            }
+            else if(op=='*'){
+                result=eval(num1)*eval(num2);
+            }
+            else
+            result=eval(num1)/eval(num2);
+            document.getElementById("out").innerHTML=result;
+        }
+    </script>
+    <style type="text/css">
+        body h6{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            font-style: oblique;
+            color: salmon;
+            margin-left:500px;
+            
+            box-sizing: border-box;
+        }
+        input{
+            height: 20px;
+            width: 50px;
+        }
+        .numbers{
+            margin-left: 500px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <h6>Calculator</h6>
+    <div class="numbers">
+    <input type="button" value="1" id="n1" onClick="input_user(id)">
+    <input type="button" value="2" id="n2" onClick="input_user(id)">
+    <input type="button" value="3" id="n3" onClick="input_user(id)">
+    <input type="button" value="+" id="add" onClick="input_user(id)"><br>
+    <input type="button" value="4" id="n4" onClick="input_user(id)">
+    <input type="button" value="5" id="n5" onClick="input_user(id)">
+    <input type="button" value="6" id="n6" onClick="input_user(id)">
+    <input type="button" value="-" id="sub" onClick="input_user(id)"><br>
+    <input type="button" value="7" id="n7" onClick="input_user(id)">
+    <input type="button" value="8" id="n8" onClick="input_user(id)">
+    <input type="button" value="9" id="n9" onClick="input_user(id)">
+    <input type="button" value="*" id="prod" onClick="input_user(id)"><br>
+    <input type="button" value="ac" id="ac" onClick="input_user(id)">
+    <input type="button" value="0" id="n0" onClick="input_user(id)">
+    <input type="button" value="=" id="eql" onClick="input_user(id)">
+    <input type="button" value="/" id="divi" onClick="input_user(id)"><br>
+    <label>Result:</label>
+    <span id="out"></span>
+</div>
+</body>
+</html>
